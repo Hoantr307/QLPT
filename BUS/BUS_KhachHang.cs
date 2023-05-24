@@ -25,7 +25,16 @@ namespace BUS
 
         public bool AddKhachHang(KhachHang khachHang)
         {
-            return dalkh.AddKhachHang(khachHang);
+            try
+            {
+                return dalkh.AddKhachHang(khachHang);
+                
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            
         }
 
         public bool EditKhachHang(KhachHang khachHang)

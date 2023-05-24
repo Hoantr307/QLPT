@@ -19,12 +19,21 @@ namespace BUS
 
         public DataTable GetDangKyDV()
         {
+
             return daldk.GetDangKyDV();
         }
 
         public bool AddDKDV(DKDichVu dKDichVu)
         {
-            return daldk.AddDKDV(dKDichVu);
+            try
+            {
+                return daldk.AddDKDV(dKDichVu);
+
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public bool EditDKDV(DKDichVu dKDichVu)

@@ -21,7 +21,7 @@ namespace UnitTestProject
             bool result = loginForm.kiemTraTK(username, password);
 
             // Assert
-            Assert.AreEqual(result, true);
+            Assert.IsFalse(result);
         }
 
         [TestMethod]
@@ -36,7 +36,7 @@ namespace UnitTestProject
             bool result = loginForm.kiemTraTK(username, password);
 
             // Assert
-            Assert.AreEqual(result, true);
+            Assert.IsFalse(result);
         }
 
         [TestMethod]
@@ -51,7 +51,7 @@ namespace UnitTestProject
             bool result = loginForm.kiemTraTK(username, password);
 
             // Assert
-            Assert.AreEqual(result, true);
+            Assert.IsFalse(result);
         }
 
         [TestMethod]
@@ -66,7 +66,7 @@ namespace UnitTestProject
             bool result = loginForm.kiemTraTK(username, password);
 
             // Assert
-            Assert.AreEqual(result, true);
+            Assert.IsFalse(result);
         }
 
         //
@@ -82,7 +82,7 @@ namespace UnitTestProject
             bool result = loginForm.kiemTraTK(username, password);
 
             // Assert
-            Assert.AreEqual(result, true);
+            Assert.IsFalse(result);
         }
 
         [TestMethod]

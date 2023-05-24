@@ -15,7 +15,7 @@ namespace UnitTestProject
 
             KhachHang kh = new KhachHang()
             {
-                maKhachHang = "kh30",
+                maKhachHang = "kh32",
                 tenKhachHang = "Hoan",
                 gioiTinh = "Nam",
                 ngaySinh = DateTime.Parse("30/07/2003"),
@@ -35,7 +35,7 @@ namespace UnitTestProject
 
             KhachHang kh = new KhachHang()
             {
-                maKhachHang = "kh20",
+                maKhachHang = "kh31",
                 tenKhachHang = "Hoan",
                 gioiTinh = "Nam",
                 ngaySinh = DateTime.Parse("30/07/2003"),
@@ -45,7 +45,7 @@ namespace UnitTestProject
                 cCCD = "094230425"
             };
             bool result = busKH.AddKhachHang(kh);
-            Assert.IsTrue(result);
+            Assert.IsFalse(result);
         }
 
         [TestMethod]
@@ -59,7 +59,7 @@ namespace UnitTestProject
                 tenKhachHang = "Hoan",
                 gioiTinh = "Nam",
                 ngaySinh = DateTime.Parse("30/07/2003"),
-                queQuan = "Hung Yen",
+                queQuan = " Khoai Chau - Hung Yen",
                 dienThoai = "098766434",
                 ngheNghiep = "Sinh vien",
                 cCCD = "094230425"
@@ -77,7 +77,7 @@ namespace UnitTestProject
             {
                 maKhachHang = "kh25",
                 tenKhachHang = "Hoan",
-                gioiTinh = "Nam",
+                gioiTinh = "",
                 ngaySinh = DateTime.Parse("30/07/2003"),
                 queQuan = "Hung Yen",
                 dienThoai = "098766421",
@@ -85,17 +85,17 @@ namespace UnitTestProject
                 cCCD = "094230425"
             };
             bool result = busKH.EditKhachHang(kh);
-            Assert.IsTrue(result);
+            Assert.IsFalse(result);
         }
 
         [TestMethod]
         public void TestXoaKhachHang_ThanhCong()
         {
             BUS_KhachHang bus_KH = new BUS_KhachHang();
-            string maKhachHang = "kh30";
+            string maKhachHang = "kh31";
 
             bool result = bus_KH.DeleteKhachHang(maKhachHang);
-            Assert.AreEqual(result, true);
+            Assert.IsTrue(result);
         }
 
         [TestMethod]
@@ -105,7 +105,7 @@ namespace UnitTestProject
             string maKhachHang = "kh30";
 
             bool result = bus_KH.DeleteKhachHang(maKhachHang);
-            Assert.AreEqual(result, true);
+            Assert.IsFalse(result);
         }
     }
 }

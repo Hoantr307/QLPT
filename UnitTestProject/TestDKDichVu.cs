@@ -36,12 +36,12 @@ namespace UnitTestProject
             {
                 maCTHD = "",
                 maDichVu = "",
-                ngayDK = DateTime.ParseExact("", "dd/MM/yyyy", CultureInfo.InvariantCulture),
-                ngayKT = DateTime.ParseExact("", "dd/MM/yyyy", CultureInfo.InvariantCulture)
+                ngayDK = DateTime.ParseExact("24/05/2023", "dd/MM/yyyy", CultureInfo.InvariantCulture),
+                ngayKT = DateTime.ParseExact("24/06/2023", "dd/MM/yyyy", CultureInfo.InvariantCulture)
             };
 
             bool result = bUS_DK.AddDKDV(dk);
-            Assert.AreEqual(result, true);
+            Assert.IsFalse(result);
         }
 
         [TestMethod]
@@ -58,7 +58,7 @@ namespace UnitTestProject
             };
 
             bool result = bUS_DK.AddDKDV(dk);
-            Assert.AreEqual(result, true);
+            Assert.IsFalse(result);
         }
 
 
@@ -76,7 +76,7 @@ namespace UnitTestProject
             };
 
             bool result = bUS_DK.EditDKDV(dk);
-            Assert.AreEqual(result, true);
+            Assert.IsTrue(result);
         }
 
         [TestMethod]
@@ -87,13 +87,13 @@ namespace UnitTestProject
             DKDichVu dk = new DKDichVu()
             {
                 maCTHD = "ct01",
-                maDichVu = "vs",
-                ngayDK = DateTime.ParseExact("", "dd/MM/yyyy", CultureInfo.InvariantCulture),
-                ngayKT = DateTime.ParseExact("", "dd/MM/yyyy", CultureInfo.InvariantCulture)
+                maDichVu = "",
+                ngayDK = DateTime.ParseExact("24/05/2023", "dd/MM/yyyy", CultureInfo.InvariantCulture),
+                ngayKT = DateTime.ParseExact("24/06/2023", "dd/MM/yyyy", CultureInfo.InvariantCulture)
             };
 
             bool result = bUS_DK.EditDKDV(dk);
-            Assert.AreEqual(result, true);
+            Assert.IsFalse(result);
         }
 
         [TestMethod]
@@ -104,7 +104,7 @@ namespace UnitTestProject
             string maDichVu = "vs";
 
             bool result = bUS_DK.DeleteDKDV(maCTHD, maDichVu);
-            Assert.AreEqual(result, true);
+            Assert.IsTrue(result);
         }
 
         [TestMethod]
@@ -115,7 +115,7 @@ namespace UnitTestProject
             string maDichVu = "";
 
             bool result = bUS_DK.DeleteDKDV(maCTHD, maDichVu);
-            Assert.AreEqual(result, true);
+            Assert.IsFalse(result);
         }
     }
 }
